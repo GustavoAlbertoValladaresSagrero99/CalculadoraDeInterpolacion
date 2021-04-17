@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="./res/img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora de interpolaciones</title>
+    <link rel="stylesheet" href="css/fonts/style.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <!-- HEADER-->
+    <header class="header">
+        <div class="menu_bar">
+            <p class="bt-menu"><span class="icon-calculator"></span><span class="icon-menu1" id="toggle-menu"></span>Interpolaciones</p>
+        </div>
+
+        <nav>
+            <ul class="list-container">
+                <li><a data-control="btn-inicio" href="#"><span class="icon-calculator"></span>Interpolaciones</a></li>
+                <li><a data-control="btn-inicio" href="#""><span class="icon-home2"></span>Inicio</a></li>
+                <li><a data-control="btn-tutos" href="#"><span class="icon-live_help"></span>Tutoriales</a></li>
+                <li class="submenu">
+                    <a href="#"  title="Seleccionar Interpolación"><span class="caret icon-keyboard_arrow_down"></span><span class="OSelected">Seleccionar Interpolación</span></a>
+                    <ul class="children">
+                        <li id="OLineal"><a href="#" data-control="btn-1">Interpolación Líneal<span class="icon-dot-circle-o"></span></a></li>
+                        <li id="OCuadratica"><a href="#" data-control="btn-2">Interpolación Cuadratica<span class="icon-dot-circle-o"></span></a></li>
+                        <li id="OLagrange"><a href="#" data-control="btn-3">Interpolación Lagrange<span class="icon-dot-circle-o"></span></a></li>
+                    </ul>
+                </li>
+                <li class="autoSelect"><a href="#">Auto-selección<span class="autoSelectOp icon-check_box_outline_blank"></span></a></li>
+                <li><a data-control="btn-about" href="#"><span class="icon-info"></span>Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <!-- SELECCIÓN TIPO DE INTERPOLACIÓN -->
+    <div class="MainContainer">
+           
+    <!-- TITULO-->
+    <section class="title_container">
+        <h1>Calculadora de interpolación</h1>
+        <!--Description-->
+        <article>
+            <p>Esta calculadora permite verificar las soluciones a los problemas de interpolación con diferentes métodos: Interpolación Líneal
+                , Interpolación Cuadratica, Interpolaciones de Lagrange (1er grado y 2do grado).
+            </p>
+        </article>
+    </section>
+
+    <div class="selectContainer">
+        <select name="" id="selectMobil">
+            <option  value="0">Seleccionar Interpolación</option>
+            <option value="1">Interpolación Líneal</option>
+            <option value="2">Interpolación Cuadratica</option>
+            <option value="3">Interpolación Lagrange</option>
+        </select>
+    </div>
+
+        <div class="DataContainer">
+
+            <!--DATA INPUT-->
+
+            <form action="" class="inputData">
+                <table border="1" id="tableData">
+                    <caption>Datos de entrada</caption>
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>F(X)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyData">
+                        <tr>
+                            <td><label><span>X<sub>0</sub> = </span><input type="text" placeholder="Ej: 1"></label></td>
+                            <td><label><span>F(X<sub>0</sub>) = </span><input type="text" placeholder="Ej: 3"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label><span>X<sub>1</sub> = </span><input type="text" placeholder="Ej: 1"></label></td>
+                            <td><label><span>F(X<sub>1</sub>) = </span><input type="text" placeholder="Ej: 3"></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="opLagrange">
+                    <button class="btn_delData" data-control="btn-4">Usar >> Lagrange 1er. Orden</button>
+                    <button class="btn_addData" data-control="btn-5">Usar >> Lagrange 2da. Orden</button>
+                </div>
+            </form>
+        </div>
+        <div class="conocidoContainer">
+            <div class="tituloConocido">
+                <p>Valor <b>X</b> conocido</p>
+            </div>
+            <div class="datoConocido">
+                <label>X = <input type="number" placeholder="Ej: 3.5" id="XValor"></label>
+            </div>
+
+            <div class="tituloConocido">
+                <p>Valor <b>F(X)</b> conocido<span class="icon-check-circle1"></span></p>
+            </div>
+            <div class="datoConocido">
+                <label>Y = <input type="number" placeholder="Ej: 3 (opcional)" id="YValor"></label>
+            </div>
+        </div>
+        <div class="btn_container">
+            <button data-control="btn-6">Calcular</button>
+            <button data-control="btn-7" type="reset" form=".inputData">Resetear</button>
+        </div>
+    </div>
+
+    <div class="resultados">
+        <div class="solucion">
+            <div class="resultInterpolacion fdx">
+                <div class="tituloSolucion">
+                    <p>Valor Interpolado F(X) Aproximado</p>
+                </div>
+                <div class="datosSolucion">
+                    <label>F(X) = <input type="text" value="0" id="soluionY" readonly></label>
+                </div>
+            </div>
+            <div class="resultInterpolacion margenError">
+                <div class="tituloSolucion">
+                    <p>Porcentaje de Error Relativo</p>
+                </div>
+                <div class="datosSolucion">
+                    <label>E<sub>a</sub> = <input type="text" value="0" readonly id="Ea"></label>
+                </div>
+                <div class="datosSolucion">
+                    <label>E<sub>r</sub> = <input type="text" value="0" readonly id="Er"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

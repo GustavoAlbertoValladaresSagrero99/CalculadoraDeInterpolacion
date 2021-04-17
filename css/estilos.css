@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css?family=Modak|Roboto');
+
+*{
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+body
+{
+    overflow-x: hidden;
+    background: #FFFFFA;
+}
+
+body::-webkit-scrollbar{
+    width: 8px;
+    background-color: darkslategray;
+}
+
+body::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 10px;
+    background-color: #CCC;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:#CCC;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background-color:rgb(252, 255, 251);
+}
+
+
+header
+{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+}
+
+.MainContainer
+{
+    margin-top: 100px;
+}
+
+header nav
+{
+    width: 100%;
+    background: #024959;
+    z-index: 1000;
+}
+
+.menu_bar
+{
+    display: none;
+}
+
+header nav ul
+{
+    list-style: none;
+}
+
+header nav ul li
+{
+    display: inline-block;
+    position: relative;
+}
+
+header nav > ul > li:last-child
+{
+    float:right;
+}
+header nav > ul > li:first-child:hover
+{
+    background: #024959;
+}
+
+header nav ul li a
+{
+    font-family: Roboto, sans-serif;
+    color: #FFF;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+header nav ul li a span
+{
+    margin-right: 10px;
+}
+
+header nav ul li:hover
+{
+    background: #023136;
+}
+
+
+.title_container
+{
+    width: 100%;
+    margin: 20px;
+}
+
+.title_container article
+{
+    margin: 35px 10px 20px 10px;
+    width: 60%;
+}
+
+
+.title_container h1
+{
+    text-align: left;
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.title_container article p
+{
+    font-size: 1.2rem;
+    text-align: justify;
+    color: rgba(0, 0, 0, .5);
+}
+
+header nav ul li:hover .children
+{
+    display:block;
+}
+
+header nav ul li .children
+{
+    display: none;
+    background: #023136;
+    position: absolute;
+    width: 120%;
+    z-index: 1000;
+}
+
+header nav ul li .children li
+{
+    display: block;
+    overflow: hidden;
+}
+
+header nav ul li .children li a
+{
+    display: block;
+}
+
+header nav ul li .children li:hover
+{
+    background: #356772;
+}
+
+header nav ul li .children li a span
+{
+    float: right;
+}
+
+.autoSelect
+{
+    display: none;
+}
+
+.autoSelectOp .autoSelectOp
+{
+    margin: 0px 20px;
+    float: right;
+}
+
+.DataContainer
+{
+    box-shadow: 3px 3px 10px #023136;
+    margin: auto;
+    width: 50%;
+    max-width: 700px;
+    overflow: hidden;
+
+}
+
+
+.inputData
+{
+    width: 100%;
+}
+
+.inputData table
+{
+    font-size: 12px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.inputData table td
+{
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+.inputData table td label
+{
+    font-size: 1rem;
+}
+
+.inputData table td input[type="text"]
+{
+    text-align: center;
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    outline: none;
+    padding: 6px;
+}
+
+.inputData table td input[type="text"]:focus
+{
+    border: 1px solid darkslateblue;
+}
+
+.inputData table th
+{
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    caption-side: bottom;
+}
+
+.inputData table caption
+{
+    padding: 1em;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+     background: #024959
+}
+
+.inputData .opLagrange button
+{
+    display: none;
+}
+
+.inputData .btn_addData, .btn_delData
+{
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #000;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    background: rgb(247, 230, 230);
+    color: #000;
+}
+.inputData button:hover
+{
+    font-size: 1.2rem;
+    background: #023136;
+    color: #CCC;
+    transition: all 0.5s;
+}
+
+
+
+.conocidoContainer
+{
+    box-shadow: 3px 3px 10px #023136;
+    position: fixed;
+    width: 20%;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: rgb(247, 230, 230);
+    right: 0;
+    top: 100px;
+}
+
+.conocidoContainer .tituloConocido
+{
+    background: #024959;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+}
+
+.conocidoContainer .tituloConocido p span
+{
+   margin-left: 5px;
+}
+
+.conocidoContainer .tituloConocido:first-child
+{
+    border-radius: 7px 7px 0px 0px;
+}
+
+
+
+
+
+
+.conocidoContainer .tituloConocido p
+{
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.conocidoContainer .datoConocido
+{
+    margin: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+.conocidoContainer .datoConocido input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+.conocidoContainer .datoConocido input[type="number"]
+{
+    width: 70%;
+    margin: auto;
+    padding: 6px;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+
+
+.btn_container{
+    position: fixed;
+    width: 20%;
+    margin: 20px;
+    right: 0;
+    bottom: 100px;
+
+}
+
+
+.btn_container button{
+    box-shadow: 1px 1px 5px #023136;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: block;
+    width: 80%;
+    min-width: 130px;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    outline: none;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.btn_container button:first-child{
+    padding: 15px;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.btn_container button:first-child:hover{
+    background: #023136;
+    color: #FFF;
+    transition: all .5s;
+}
+
+.btn_container button:hover{
+    background: rgba(0, 0, 0, .1);
+}
+
+
+
+
+.resultados
+{
+    margin-top: 100px;
+    width: 100%;
+}
+
+.resultados .solucion
+{
+    width: 100%;
+}
+
+.resultados .solucion .resultInterpolacion
+{
+    box-shadow: 3px 3px 10px #023136;
+    display: none;
+    border: 1px solid #356772;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.resultInterpolacion .tituloSolucion
+{
+    background: #024959;
+    color: #FFF;
+    text-align: center;
+}
+
+.resultInterpolacion .tituloSolucion p
+{
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.resultInterpolacion .datosSolucion
+{
+    margin: 10px;
+    text-align: center;
+}
+
+.resultInterpolacion .datosSolucion input[type="text"]
+{
+    padding: 10px;
+    width: 80%;
+    outline: none;
+    margin: auto;
+    background: #FFF;
+}
+/*END Normal styles*/
+
+
+.selectContainer
+{
+    display: none;
+    position: sticky;
+    top: 63px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.selectContainer select
+{
+    border: 1px solid #000;
+    font-size: 1.3rem;
+    background: #356772;
+    color: #FFF;
+    padding: 10px;
+    appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    
+}
+
+
+
+
+
+
+@media screen and (max-width:800px) {
+
+
+    header
+    {
+        position: fixed;
+        top: 0;
+        float: left;
+    }
+
+    header nav
+    {
+        background: #024959;
+        width: 80%;
+        left: -100%;
+        height: 100%;
+        position: fixed;
+    }
+
+    header nav ul li:first-child
+    {
+        display: none;
+    }
+
+    header nav ul li:last-child
+    {
+        float:none;
+    }
+
+    header nav ul li
+    {
+        display: block;
+        float: none;
+        border-bottom:1px solid rgba(255, 255, 255, .3);
+    }
+
+    header nav ul li .children
+    {
+        width: 100%;
+    }
+
+    .menu_bar
+    {
+        display: block;
+        width: 100%;
+        background: #CCC;
+    }
+
+    .menu_bar .bt-menu
+    {
+        display: block;
+        padding: 20px;
+        background: #024959;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: Roboto,sans-serif;
+    }
+
+    .menu_bar .bt-menu span
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu_bar .bt-menu span:last-child
+    {
+        margin: 0;
+        font-size: 30px;
+        float: right;
+    }
+
+    .title_container
+    {
+        margin: 0px 10px;
+        width: 90%;
+    }
+
+    .title_container h1
+    {
+        font-size: 3.5rem;
+    }
+
+    .title_container article
+    {
+        width: 100%;
+    }
+
+    .DataContainer
+    {
+        margin: auto;
+        width: 90%;
+    }
+
+    .inputData
+    {
+        width: 100%;
+    }
+
+    .inputData table td input[type="text"]
+    {
+        text-align: center;
+        padding: 5px;
+    }
+    .inputData table td label
+{
+    font-size: 0.85rem;
+}
+
+    .conocidoContainer
+    {
+        position: initial;
+        display: block;
+        width: 90%;
+        margin: 30px auto;
+        border-radius: 10px;
+        border: 1px solid #000;
+    }
+    
+    .btn_container{
+        position: initial;
+        width: 90%;
+    }
+
+    .resultados .solucion .resultInterpolacion
+    {
+        width: 90%;
+    } 
+    
+    .selectContainer
+    {
+        display: inline-block;
+    }   
+    
+
+
+
+    
+}

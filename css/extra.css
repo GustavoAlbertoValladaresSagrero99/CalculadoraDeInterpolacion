@@ -1,0 +1,170 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.container
+{
+    width: 95%;
+    margin: auto;
+}
+
+.container .articulo
+{
+    box-shadow: 3px 3px 10px #CCC;
+    display: block;
+    width: 70%;
+    margin: 40px auto;
+    border: 1px solid #CCC;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
+.container .articulo p
+{
+    border-radius: 8px 8px 0px 0px;
+    color: #FFFFFA;
+    background: #024959;
+    font-size: 1.15rem;
+    padding: 10px;
+}
+
+.container .articulo iframe
+{
+    display: block;
+    width: 100%;
+    border: 0px;
+    height: 450px;
+}
+
+.cleaner
+{
+    clear: both;
+}
+
+.containerInfo
+{
+    width: 100%;
+}
+
+.containerInfo .arInfo
+{
+    box-shadow: 3px 1px 20px 1px #AAA;
+    background: #FFF;
+    width: 50%;
+    min-width: 700px;
+    max-width: 800px;
+    margin: 40px auto;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.containerInfo .arInfo:first-child
+{
+    margin: 0px auto;
+}
+
+
+.containerInfo img
+{
+    display: block;
+    width: 100px;
+    margin: 15px 8px;
+    float: left;
+    border: 2px solid #024959;
+    border-radius: 50%;
+}
+
+.containerInfo .info
+{
+    background: rgb(247, 245, 245);
+    overflow: hidden;
+    border: 2px dotted rgba(0,0,0,0.5);
+    border-radius: 10px;
+    width: 70%;
+    margin: 30px calc(25% - 30px);
+    text-align: start;
+    padding: 5px;
+}
+
+.containerInfo .info p
+{
+    display: inline-block;
+    padding: 3px;
+    font-size: 1.3rem;
+}
+
+
+
+
+.containerInfo .info p span
+{
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+
+.containerInfo .arInfo > p
+{
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 13px;
+    background: #024959;
+    color: #FFF;
+
+}
+
+
+@media screen and (max-width:800px) {
+    .container .articulo
+    {
+        width: 90%;
+    }  
+    
+    .container .articulo p
+    {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .container .articulo iframe
+    {
+        height: auto;
+    }
+    
+    .containerInfo .arInfo
+    {
+        width: 90%;
+        min-width: 300px;
+    }
+
+    .containerInfo img
+    {
+        float: none;
+       width: 120px;
+       margin: 10px auto;
+    }
+    
+    .containerInfo .info
+    {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .containerInfo .info p
+    {
+        padding: 3px;
+        font-size: 17px;
+    }
+
+    .containerInfo .info p
+    {
+        display: block;
+        text-align: center;
+    }
+
+
+
+}
