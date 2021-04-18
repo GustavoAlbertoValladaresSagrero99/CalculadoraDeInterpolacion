@@ -97,12 +97,10 @@
 }
 
 
-
-
-.containerInfo .info p span
+.containerInfo .arInfo p span
 {
-    display: inline-block;
-    margin: 5px 10px;
+    float: right;
+    margin: 5px;
 }
 
 
@@ -115,6 +113,25 @@
     background: #024959;
     color: #FFF;
 
+}
+
+.tech
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
+    margin: auto;
+    justify-content:center;
+}
+
+
+.tech img
+{
+    grid-column-start: 1fr 1fr;
+    display: block;
+    border-radius: 10px;
+    margin: 5px;
+    width: 90%;
 }
 
 
@@ -164,6 +181,12 @@
         display: block;
         text-align: center;
     }
+
+    .tech img
+    {
+        grid-column-start: 1fr;
+        width: 90%;
+    }   
 
 
 

@@ -63,7 +63,7 @@ $(document).on("scroll", (e) =>{
 
 $(document).ready(main);
 
-const INTERP = ["Seleccionar Interpolación","Interpolación Líneal","Interpolación Cuadratica","Interpolación Lagrange"];
+const INTERP = ["Seleccionar Interpolación","Interpolación Lineal","Interpolación Cuadrática","Interpolación Lagrange"];
 var isMenuClosed = true;
 var isDelBtnHide = true;
 var optionTypeSelected = 0;
@@ -110,7 +110,15 @@ function getValues()
 
     for(let i=0; i < tempArray.length; i++)
     {
-        fieldData.push( [parseFloat(tempArray[i]), parseFloat(tempArray[++i])] );
+        if(tempArray[i].startsWith("[log10]"))
+        {
+            let valor = Math.log10(parseFloat(tempArray[i].split(" ").join("").substr(tempArray[i].indexOf("]")+1)));
+            fieldData.push( [parseFloat(valor), parseFloat(tempArray[++i])] );
+        }else
+        {
+            fieldData.push( [parseFloat(tempArray[i]), parseFloat(tempArray[++i])] );
+        }
+
     }    
 }
 
@@ -238,7 +246,7 @@ function PorcError()
 {
     $("#Ea").val(0);
     $("#Er").val(0);
-    FdXExacta = Math.abs(parseFloat($("#YValor").val()));
+    FdXExacta = parseFloat($("#YValor").val());
 
 
     /*
@@ -246,12 +254,13 @@ function PorcError()
         _EV = ( Ev / FdXExacta ) * 100 
     */
 
-        let Ev = Math.abs(FdXExacta - FdXAprox);
-        let _EV = ( Ev / FdXExacta ) * 100;
+        let Ev = (Number((FdXExacta - FdXAprox).toFixed(5)));
+        let _EV = (Number((( Ev / FdXExacta ) * 100).toFixed(5)));
 
         $("#Ea").val(Ev);
         $("#Er").val(_EV+"%");
         $(".margenError").fadeIn();
+        window.scrollBy(0, $(".margenError").offset().top);
 }
 
 //Porcentaje de error FINAL
@@ -264,7 +273,7 @@ function InterpolacionLineal()
 {
     getValues();
     FdXAprox = 0;
-    FdXAprox = (fieldData[0][1] + ((fieldData[1][1] - fieldData[0][1])/(fieldData[1][0]-fieldData[0][0])) * (X - fieldData[0][0]));
+    FdXAprox = Number(((fieldData[0][1] + ((fieldData[1][1] - fieldData[0][1])/(fieldData[1][0]-fieldData[0][0])) * (X - fieldData[0][0]))).toFixed(5));
     $("#soluionY").val(FdXAprox);
     $(".fdx").fadeIn();
     window.scrollBy(0, $("#soluionY").offset().top);
@@ -294,7 +303,7 @@ function InterpolacionCuadratica()
         let B0 = fieldData[0][1];
         let B1 = (( fieldData[1][1] - fieldData[0][1] ) / ( fieldData[1][0] - fieldData[0][0] ));
         let B2 = ((((fieldData[2][1] - fieldData[1][1]) / (fieldData[2][0] - fieldData[1][0])) - ((fieldData[1][1] - fieldData[0][1]) / (fieldData[1][0] - fieldData[0][0]))) / (fieldData[2][0] - fieldData[0][0]));
-        FdXAprox = B0 + (B1 * (X - fieldData[0][0])) + (B2 * (X - fieldData[0][0]) * (X - fieldData[1][0]));
+        FdXAprox = Number((B0 + (B1 * (X - fieldData[0][0])) + (B2 * (X - fieldData[0][0]) * (X - fieldData[1][0]))).toFixed(5));
         $("#soluionY").val(FdXAprox);
         $(".fdx").fadeIn();
         window.scrollBy(0, $("#soluionY").offset().top);
@@ -316,7 +325,7 @@ function InterpolacionLagrange_Grado1()
         Formula primer grado
         F(X) = (((X - X1) / (X0 - X1)) * F(X0)) + (((X - X0) / (X1 - X0)) * F(X1))
     */
-   FdXAprox = (((X - fieldData[1][0]) / (fieldData[0][0] - fieldData[1][0])) * fieldData[0][1]) + (((X - fieldData[0][0]) / (fieldData[1][0] - fieldData[0][0])) * fieldData[1][1]);
+   FdXAprox = Number(((((X - fieldData[1][0]) / (fieldData[0][0] - fieldData[1][0])) * fieldData[0][1]) + (((X - fieldData[0][0]) / (fieldData[1][0] - fieldData[0][0])) * fieldData[1][1])).toFixed(5));
    $("#soluionY").val(FdXAprox);
    $(".fdx").fadeIn();
    window.scrollBy(0, $("#soluionY").offset().top);
@@ -342,7 +351,7 @@ function InterpolacionLagrange_Grado2()
         let L0 = (( ((X - fieldData[1][0]) / (fieldData[0][0] - fieldData[1][0])) * ((X - fieldData[2][0]) / (fieldData[0][0] - fieldData[2][0])) ));
         let L1 = (( ((X - fieldData[0][0]) / (fieldData[1][0] - fieldData[0][0])) * ((X - fieldData[2][0]) / (fieldData[1][0] - fieldData[2][0])) ));
         let L2 = (( ((X - fieldData[0][0]) / (fieldData[2][0] - fieldData[0][0])) * ((X - fieldData[1][0]) / (fieldData[2][0] - fieldData[1][0])) ));
-        FdXAprox = (L0 * fieldData[0][1]) + (L1 * fieldData[1][1]) + (L2 * fieldData[2][1]);
+        FdXAprox = Number(((L0 * fieldData[0][1]) + (L1 * fieldData[1][1]) + (L2 * fieldData[2][1])).toFixed(5));
         $("#soluionY").val(FdXAprox);
         $(".fdx").fadeIn();
         window.scrollBy(0, $("#soluionY").offset().top);
@@ -451,9 +460,9 @@ function main()
         let control = e.target.dataset.control;
         switch(control)
         {
-            case 'btn-inicio':location.href="/index.html";break;
-            case 'btn-tutos':location.href="/tutorial.html";break;
-            case 'btn-about':location.href="/about.html";break;
+            case 'btn-inicio':location.href="./index.html";break;
+            case 'btn-tutos':location.href="./tutorial.html";break;
+            case 'btn-about':location.href="./about.html";break;
             case 'btn-1': optionTypeSelected = 1;break;
             case 'btn-2': optionTypeSelected = 2;break;
             case 'btn-3': optionTypeSelected = 3;break;
