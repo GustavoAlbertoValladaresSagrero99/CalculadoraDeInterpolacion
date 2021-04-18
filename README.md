@@ -28,9 +28,8 @@ git clone https://github.com/GustavoAlbertoValladaresSagrero99/CalculadoraDeInte
 
 _Página de prueba para ver la aplicación en funcionamiento_
 
-```
-* [Ver DEMO](https://albertosgr.000webhostapp.com) - Te permitira dar un vistazo de la aplicación en una página web.
-```
+
+* [Ver DEMO](https://albertosgr.000webhostapp.com) - Te permitira dar un vistazo de la aplicaciónpágina web.
 
 
 ### Responsivo 📱
