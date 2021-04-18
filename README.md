@@ -8,11 +8,9 @@ Esta calculadora permite verificar las soluciones a los problemas de interpolaci
 
 _Para poder visualizar la demo se necesita que el navegador cuente con soporte para:_
 
-```
 * HTML5
 * ECMASCRIPT 5 o superior
 * CSS3
-```
 
 
 ### Clonar repositorio 🔧
@@ -29,16 +27,15 @@ git clone https://github.com/GustavoAlbertoValladaresSagrero99/CalculadoraDeInte
 _Página de prueba para ver la aplicación en funcionamiento_
 
 
-* **[Ver DEMO]**(https://albertosgr.000webhostapp.com) - Te permitira dar un vistazo de la aplicación página web.
+* [Ver DEMO](https://albertosgr.000webhostapp.com) - Te permitira dar un vistazo de la aplicación página web.
 
 
 ### Responsivo 📱
 
 _La aplicación también se adapta a dispositivos móviles
 
-```
 * Utilizando la metodología de Mobile First.
-```
+
 
 ## Construido con 🛠️
 
@@ -49,15 +46,11 @@ _Tecnologías utilizadas en esta aplicación_
 * [JQuery](https://jquery.com) -  Biblioteca multiplataforma de JavaScript.
 * [CSS3](https://developer.mozilla.org/es/docs/Web/CSS) - Hojas de Estilo en Cascada.
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
 
 ## Autores ✒️
 
 * **Gustavo Alberto Valldares Sagrero** - *Programación*, *Diseño de GUI*, *Documentación* - [Alberto Sagrero](https://github.com/GustavoAlbertoValladaresSagrero99)
 * **Darlene Vanessa Moreno** - *Programación*, *Diseño de GUI*, *Documentación* - [Darlene Moreno](#fulanito-de-tal)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/GustavoAlbertoValladaresSagrero99) quíenes han participado en este proyecto. 
 
