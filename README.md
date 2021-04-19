@@ -50,7 +50,6 @@ _Tecnologías utilizadas en esta aplicación_
 ## Autores ✒️
 
 * **Gustavo Alberto Valldares Sagrero** - *Programación*, *Diseño de GUI*, *Documentación* - [Alberto Sagrero](https://github.com/GustavoAlbertoValladaresSagrero99)
-* **Darlene Vanessa Moreno** - *Programación*, *Diseño de GUI*, *Documentación* - [Darlene Moreno](#fulanito-de-tal)
+* **Darlene Vanessa Moreno** - *Programación*, *Diseño de GUI*, *Documentación* - [Darlene Moreno](https://github.com/Darlenevm)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/GustavoAlbertoValladaresSagrero99) quíenes han participado en este proyecto. 
 

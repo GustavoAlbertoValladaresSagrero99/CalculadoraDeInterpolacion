@@ -460,6 +460,8 @@ function main()
         let control = e.target.dataset.control;
         switch(control)
         {
+            case 'btn-gitAlberto':location.href="https://github.com/GustavoAlbertoValladaresSagrero99";break;
+            case 'btn-gitDarlene':location.href="https://github.com/Darlenevm";break;
             case 'btn-inicio':location.href="./index.html";break;
             case 'btn-tutos':location.href="./tutorial.html";break;
             case 'btn-about':location.href="./about.html";break;
